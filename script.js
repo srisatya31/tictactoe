@@ -61,21 +61,4 @@ reset.addEventListener('click', ()=>{
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
     document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector(".line").style.width = "0vw";
-});
-
-const themeToggle = document.getElementById("togglebtn");
-
-function setTheme(mode) {
-    document.body.classList.toggle("dark-mode", mode === "dark");
-    localStorage.setItem("theme", mode);
-    themeToggle.innerText = mode === "dark" ? "🌙 Dark Mode" : "🌞 Light Mode";
-}
-
-const savedTheme = localStorage.getItem("theme") || 
-                   (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-
-setTheme(savedTheme);
-
-themeToggle.addEventListener("click", () => {
-    setTheme(document.body.classList.contains("dark-mode") ? "light" : "dark");
-});
+})
