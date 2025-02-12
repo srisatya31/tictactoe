@@ -9,9 +9,9 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li>MY TICTACTOE.COM</li>
-        </ul>
+    <ul>
+        <li>MY TICTACTOE.COM</li>
+    </ul>
     </nav>
     <div class="gamecontainer">
         <div class="container">
@@ -28,24 +28,28 @@
         </div>
         <div class="gameinfo">
             <h1>Welcome to Tic Tac Toe</h1>
-            <h2 class="game-status"></h2>
-            <div class="button-container">
+            <div class="turnchange">
+                <span class="info">Turn for X</span>
                 <button id="reset">Reset</button>
             </div>
-            <div class="info-container">
-                <div class="score-container">
-                    <div class="score-item">
-                        <h3>Player X</h3>
-                        <p>Wins: <span id="x-score">0</span></p>
+            <div class="score-container">
+                <div class="score-board">
+                    <h2>Score Board</h2>
+                    <div class="scores">
+                        <div class="score-item">
+                            <span>Player X:</span>
+                            <span id="scoreX">0</span>
+                        </div>
+                        <div class="score-item">
+                            <span>Player O:</span>
+                            <span id="scoreO">0</span>
+                        </div>
+                        <div class="score-item">
+                            <span>Draws:</span>
+                            <span id="scoreDraw">0</span>
+                        </div>
                     </div>
-                    <div class="score-item">
-                        <h3>Player O</h3>
-                        <p>Wins: <span id="o-score">0</span></p>
-                    </div>
-                    <div class="score-item">
-                        <h3>Draws</h3>
-                        <p><span id="draws">0</span></p>
-                    </div>
+                    <button id="resetScores">Reset Scores</button>
                 </div>
                 <div class="imgbox">
                     <img src="excited.gif" alt="">
