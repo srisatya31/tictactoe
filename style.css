@@ -1,4 +1,4 @@
-*{
+    *{
     margin: 0;
     padding: 0;
 }
@@ -69,7 +69,7 @@ nav ul{
     justify-content: center;
     margin-left: 70px;
 }
-#reset{
+#reset,#bot{
     width: 40%;
     margin: 10px;
     background: #4B0082;
