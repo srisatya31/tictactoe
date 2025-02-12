@@ -25,20 +25,34 @@ const checkwin = () => {
         [0, 4, 8], [2, 4, 6]              // Diagonals
     ];
 
+    let winnerFound = false;
+    
     wins.forEach(e => {
         if (
+            boxtext[e[0]].innerText !== "" &&
             boxtext[e[0]].innerText === boxtext[e[1]].innerText &&
-            boxtext[e[1]].innerText === boxtext[e[2]].innerText &&
-            boxtext[e[0]].innerText !== ""
+            boxtext[e[1]].innerText === boxtext[e[2]].innerText
         ) {
             info.innerText = boxtext[e[0]].innerText + " Won!";
             isgameover = true;
             gameover.play();
             document.querySelector('.imgbox img').style.width = "200px";
             disableBoxes();
+            winnerFound = true;
         }
     });
+
+    // Check for Draw if No Winner is Found
+    if (!winnerFound) {
+        let allFilled = [...boxtext].every(box => box.innerText !== "");
+        if (allFilled) {
+            info.innerText = "It's a Draw!";
+            isgameover = true;
+            gameover.play();
+        }
+    }
 };
+
 
 // Disable All Boxes
 const disableBoxes = () => {
