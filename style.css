@@ -2,20 +2,41 @@
     margin: 0;
     padding: 0;
 }
-nav{
+nav {
     background-color: rgb(183, 46, 233);
     color: rgb(242, 246, 246);
     height: 85px;
     font-size: 27px;
-    align-items: center;
     display: flex;
-    padding: 0 12px;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing between logo+text and button */
+    padding: 0 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-nav ul{
+nav ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
+.nav-logo {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+}
+
+.logo {
+    width: 75px; /* Adjust size as needed */
+    height: 75px;
+    margin-right: 12px; /* Adds spacing between the logo and text */
+    border-radius: 20%; /* Makes the logo circular */
+}
+
+.site-title {
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
 .info{
     font-size: 30px;
 }
