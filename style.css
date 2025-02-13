@@ -1,4 +1,4 @@
-*{
+    *{
     margin: 0;
     padding: 0;
 }
@@ -98,7 +98,7 @@ nav ul{
     justify-content: center;
     margin-top: 20px;
 }
-#reset{
+#reset,#bot{
     width: 40%;
     margin: 10px;
     background: #4B0082;
@@ -146,3 +146,40 @@ nav ul{
     }
 
 } 
+enhancement/improve-turn-indicator
+=======
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --button-bg: lightgray;
+    --game-bg: bisque;
+}
+
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: white;
+    --button-bg: gray;
+    --game-bg: #2c2c2c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.gamecontainer {
+    background-color: var(--game-bg);
+}
+
+#togglebtn {
+    background-color: var(--button-bg);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+} main
