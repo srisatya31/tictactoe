@@ -17,7 +17,7 @@ nav ul{
     list-style-type: none;
 }
 .info{
-    font-size: 30px;
+    font-size: 38px;
 }
 .gamecontainer{
      background-color: bisque;
@@ -43,9 +43,37 @@ nav ul{
 .box:hover{
     background-color: rgb(168, 212, 231);
 }
+.info{
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 0px 15px rgba(106, 17, 203, 0.6);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+    from {
+        box-shadow: 0px 0px 10px rgba(106, 17, 203, 0.8);
+    }
+    to {
+        box-shadow: 0px 0px 20px rgba(37, 117, 252, 1);
+    }
+}
 .gameinfo{
     padding: 0 34px;
     font-style: italic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .imgbox img{
     width: 0;
@@ -66,8 +94,9 @@ nav ul{
 .turnchange{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-left: 70px;
+    margin-top: 20px;
 }
 #reset{
     width: 40%;
