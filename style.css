@@ -109,7 +109,7 @@ nav ul {
 #reset{
     width: 60%;
     margin: 10px;
-    background: #1f9b1b;
+    background:  #a4088d;
     color: #FFFFFF;
     padding: 6px 10px;
     border-radius: 10px;
@@ -121,8 +121,8 @@ nav ul {
    
      
 }
-#bot{
-    background: #1f9b1b;
+#bot {
+    background: #a4088d;
     color: #FFFFFF;
     border-radius: 10px;
     padding: 10px;
@@ -130,10 +130,18 @@ nav ul {
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
     width: 70%;
-     font-size: 14px;
-     transition: all 0.3s ease-in-out;
+    max-width: 200px; /* Limit button width */
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    text-align: center; /* Center the text */
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break text into words */
 }
+
+
 .turnchange button:hover{
     background-color: #2E86C1;
     transform: scale(1.05);
