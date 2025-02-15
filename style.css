@@ -1,22 +1,65 @@
-    *{
+* {
     margin: 0;
     padding: 0;
 }
-.section{
-    background: linear-gradient(to right,#f7cac9,#92a8d1);
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --nav-bg: #2C3E50;
+    --nav-text: #ECF0F1;
+    --box-border: grey;
+    --box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    --box-color: #2C3E50;
+    --box-hover: rgb(178, 119, 233);
+    --game-bg: linear-gradient(to right, #f7cac9, #92a8d1);
+    --win-line: rgb(222, 142, 229);
+    --button-bg: #1f9b1b;
+    --button-hover: #2E86C1;
+    --difficulty-bg: #1e3a42;
+    --difficulty-hover: #3142df;
+}
+
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: white;
+    --nav-bg: #111;
+    --nav-text: #eee;
+    --box-border: #333;
+    --box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+    --box-color: #eee;
+    --box-hover: #555;
+    --game-bg: #222;
+    --win-line: #888;
+    --button-bg: #333;
+    --button-hover: #555;
+    --difficulty-bg: #333;
+    --difficulty-hover: #555;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.section {
+    background: var(--game-bg);
     position: relative;
     height: 100vh;
 }
+
 nav {
-    background-color :#2C3E50;
-    color: #ECF0F1;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
     height: 85px;
     font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures spacing between logo+text and button */
+    justify-content: space-between;
     padding: 0 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: 0.3s;
 }
 
 nav ul {
@@ -27,89 +70,100 @@ nav ul {
 
 .nav-logo {
     display: flex;
-    align-items: center; /* Ensures vertical alignment */
-
+    align-items: center;
 }
-.nav-logo img{
+
+.nav-logo img {
     height: 70px;
 }
 
 .logo {
-    width: 75px; /* Adjust size as needed */
+    width: 75px;
     height: 75px;
-    margin-right: 12px; /* Adds spacing between the logo and text */
-    border-radius: 20%; /* Makes the logo circular */
+    margin-right: 12px;
+    border-radius: 20%;
 }
 
 .site-title {
     font-weight: bold;
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: nowrap;
 }
 
-.info{
+.info {
     font-size: 30px;
 }
-.gamecontainer{
+
+.gamecontainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 10px;
 }
-.container{
+
+.container {
     margin-top: 50px;
-    display: grid;  
+    display: grid;
     position: relative;
     grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3, 10vw) ;
+    grid-template-columns: repeat(3, 10vw);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.box{
-    border: 2px solid grey;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
-     font-size: 8vw;
-     color: #2C3E50;
-     cursor: pointer;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: 5px;
-}
-.box:hover{
-    background-color: rgb(178, 119, 233);
+
+.box {
+    border: 2px solid var(--box-border);
+    box-shadow: var(--box-shadow);
+    font-size: 8vw;
+    color: var(--box-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    transition: 0.3s;
 }
 
-.gameinfo{
-    display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+.box:hover {
+    background-color: var(--box-hover);
 }
-.gameinfo h1{
+
+.gameinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameinfo h1 {
     margin-bottom: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2.5rem;
-    color: #2C3E50;
-}
-.imgbox img{
-    width: 0;
-    transition: width ls ease-in-out;
+    color: var(--box-color); /* Use variable here */
+    transition: 0.3s;
 }
 
-.turnchange{
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.turnchange {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.turnchange span{
-    color: #253647;
+
+.turnchange span {
+    color: var(--box-color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
     margin-bottom: 10px;
+    /* transition: 0.3s; */
 }
+
 #reset{
     width: 60%;
     margin: 10px;
-    background:  #a4088d;
+    background: #1f9b1b;
     color: #FFFFFF;
     padding: 6px 10px;
     border-radius: 10px;
@@ -121,8 +175,8 @@ nav ul {
    
      
 }
-#bot {
-    background: #a4088d;
+#bot{
+    background: #1f9b1b;
     color: #FFFFFF;
     border-radius: 10px;
     padding: 10px;
@@ -130,102 +184,85 @@ nav ul {
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
     width: 70%;
-    max-width: 200px; /* Limit button width */
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-    text-align: center; /* Center the text */
-    white-space: normal; /* Allow text to wrap */
-    word-break: break-word; /* Break text into words */
+     font-size: 14px;
+     transition: all 0.3s ease-in-out;
 }
 
-
-.turnchange button:hover{
-    background-color: #2E86C1;
+.turnchange button:hover {
+    background-color: var(--button-hover);
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-.line{
-    background-color: rgb(222, 142, 229);
+.line {
+    background-color: var(--win-line);
     height: 4px;
     width: 0;
     position: absolute;
     transition: width 1s ease-in-out;
-
 }
-@media screen and (max-width: 800px)
-{
-    .gamecontainer{
+
+@media screen and (max-width: 800px) {
+    .gamecontainer {
         flex-wrap: wrap;
     }
-    .gameinfo{
+
+    .gameinfo {
         margin-top: 34px;
     }
-    .gameinfo h1{
+
+    .gameinfo h1 {
         font-size: 1.5rem;
     }
-    .container{
+
+    .container {
         display: grid;
         grid-template-rows: repeat(3, 30vm);
         grid-template-columns: repeat(3, 30vm);
     }
-
-} 
-/* enhancement/improve-turn-indicator
-======= */
-
-:root {
-    --bg-color: white;
-    --text-color: black;
-    --button-bg: lightgray;
-    --game-bg: bisque;
 }
 
-.dark-mode {
-    --bg-color: #1e1e1e;
-    --text-color: white;
-    --button-bg: gray;
-    --game-bg: #2c2c2c;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: 0.3s;
-}
-
-
-#togglebtn {
-    background-color: #FF5733;
-    color: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(255,87,51,0.4);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 9px;
-    position: absolute;
-    right: 20px;
+.toggle-btn {
+    position: fixed;
     top: 20px;
-    transition: all 0.3s ease;
+    right: max(10px, 2vw);
+    background: #4285cd;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#togglebtn:hover{
-    background-color: #E74C3C;
-    box-shadow: 0px 6px 15px rgba(255,87,51,0.6);
-    transform: translateY(-2px);
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        top: 20px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
 }
-#easy, #medium,#hard{
-    background-color: #1e3a42;
+
+#easy, #medium, #hard {
+    background-color: var(--difficulty-bg);
     color: #ffffff;
     margin-top: 10px;
     border: none;
     border-radius: 2px;
     padding: 10px;
     margin-right: 10px;
+
+
 }
 #easy:hover,#medium:hover,#hard:hover{
     background-color: #3142df;
