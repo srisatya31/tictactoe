@@ -1,112 +1,155 @@
-    *{
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.section{
-    background: linear-gradient(to right,#f7cac9,#92a8d1);
+
+/* Section Styles */
+.section {
+    background: linear-gradient(to right, #f7cac9, #92a8d1);
     position: relative;
     height: 100vh;
 }
+
+/* Navigation Styles */
 nav {
-    background-color :#2C3E50;
+    background-color: #2C3E50;
     color: #ECF0F1;
     height: 85px;
     font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures spacing between logo+text and button */
-    padding: 0 10px;
+    justify-content: space-between;
+    padding: 0 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative; /* Ensure proper positioning of buttons */
 }
 
+/* Navigation List */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
+/* Logo Styling */
 .nav-logo {
     display: flex;
-    align-items: center; /* Ensures vertical alignment */
-
+    align-items: center;
 }
-.nav-logo img{
+
+.nav-logo img {
     height: 70px;
 }
 
 .logo {
-    width: 75px; /* Adjust size as needed */
+    width: 75px;
     height: 75px;
-    margin-right: 12px; /* Adds spacing between the logo and text */
+    margin-right: 12px;
     border-radius: 20%; /* Makes the logo circular */
 }
 
 .site-title {
     font-weight: bold;
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: nowrap;
 }
 
-.info{
-    font-size: 30px;
+/* Button Container Styling */
+.nav-buttons {
+    display: flex;
+    align-items: center; /* Vertically center the buttons */
+    gap: 8px; /* Reduced gap between the buttons */
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
-.gamecontainer{
+
+/* Individual Button Styling */
+button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Game Container */
+.gamecontainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 10px;
 }
-.container{
+
+/* Grid Layout for Tic Tac Toe */
+.container {
     margin-top: 50px;
-    display: grid;  
+    display: grid;
     position: relative;
     grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3, 10vw) ;
+    grid-template-columns: repeat(3, 10vw);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.box{
+
+/* Box Styling */
+.box {
     border: 2px solid grey;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
-     font-size: 8vw;
-     color: #2C3E50;
-     cursor: pointer;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 8vw;
+    color: #2C3E50;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
 }
-.box:hover{
+
+/* Box Hover Effect */
+.box:hover {
     background-color: rgb(178, 119, 233);
 }
 
-.gameinfo{
+/* Game Info Container */
+.gameinfo {
     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.gameinfo h1{
+
+/* Header Styling */
+.gameinfo h1 {
     margin-bottom: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2.5rem;
     color: #2C3E50;
 }
-.imgbox img{
-    width: 0;
-    transition: width ls ease-in-out;
-}
 
-.turnchange{
+/* Turn Indicator Styling */
+.turnchange {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.turnchange span{
+
+.turnchange span {
     color: #253647;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
     margin-bottom: 10px;
 }
-#reset{
+
+/* Button Styles for Reset and Play with Computer */
+#reset {
     width: 60%;
     margin: 10px;
     background: #1f9b1b;
@@ -118,10 +161,9 @@ nav ul {
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
-   
-     
 }
-#bot{
+
+#bot {
     background: #1f9b1b;
     color: #FFFFFF;
     border-radius: 10px;
@@ -131,45 +173,49 @@ nav ul {
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     width: 70%;
-     font-size: 14px;
-     transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
 }
-.turnchange button:hover{
+
+/* Hover Effect for Buttons in Turn Info */
+.turnchange button:hover {
     background-color: #2E86C1;
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-.line{
+/* Line between grid */
+.line {
     background-color: rgb(222, 142, 229);
     height: 4px;
     width: 0;
     position: absolute;
     transition: width 1s ease-in-out;
-
 }
-@media screen and (max-width: 800px)
-{
-    .gamecontainer{
+
+/* Media Queries for Small Screens */
+@media screen and (max-width: 800px) {
+    .gamecontainer {
         flex-wrap: wrap;
     }
-    .gameinfo{
+
+    .gameinfo {
         margin-top: 34px;
     }
-    .gameinfo h1{
+
+    .gameinfo h1 {
         font-size: 1.5rem;
     }
-    .container{
+
+    .container {
         display: grid;
         grid-template-rows: repeat(3, 30vm);
         grid-template-columns: repeat(3, 30vm);
     }
+}
 
-} 
-/* enhancement/improve-turn-indicator
-======= */
-
+/* Dark Mode Styles */
 :root {
     --bg-color: white;
     --text-color: black;
@@ -190,27 +236,30 @@ body {
     transition: 0.3s;
 }
 
-
+/* Dark Mode Button Styling */
 #togglebtn {
     background-color: #FF5733;
     color: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(255,87,51,0.4);
+    box-shadow: 0px 4px 10px rgba(255, 87, 51, 0.4);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
     border-radius: 9px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
     transition: all 0.3s ease;
 }
-#togglebtn:hover{
+
+/* Hover Effect for Dark Mode Button */
+#togglebtn:hover {
     background-color: #E74C3C;
-    box-shadow: 0px 6px 15px rgba(255,87,51,0.6);
+    box-shadow: 0px 6px 15px rgba(255, 87, 51, 0.6);
     transform: translateY(-2px);
 }
-#easy, #medium,#hard{
+
+/* Button Styling for Difficulty Levels */
+#easy,
+#medium,
+#hard {
     background-color: #1e3a42;
     color: #ffffff;
     margin-top: 10px;
@@ -219,6 +268,9 @@ body {
     padding: 10px;
     margin-right: 10px;
 }
-#easy:hover,#medium:hover,#hard:hover{
+
+#easy:hover,
+#medium:hover,
+#hard:hover {
     background-color: #3142df;
 }
