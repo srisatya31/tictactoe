@@ -17,13 +17,15 @@
             </li>
         </ul>
         <button id="toggleTheme" class="toggle-btn">🌙</button>
+        <button id="feedbackBtn">💬 Feedback</button> <!-- Added Feedback Button -->
+        <button id="togglebtn">🌞 Light Mode</button>
     </nav>
     
     <div class="gamecontainer">
         
         <div class="container">
             <div class="line"></div>
-            <div class="box bt-0 bl-0" ><span class="boxtext"></span></div>
+            <div class="box bt-0 bl-0"><span class="boxtext"></span></div>
             <div class="box bt-0"><span class="boxtext"></span></div>
             <div class="box bt-0 br-0"><span class="boxtext"></span></div>
             <div class="box bl-0"><span class="boxtext"></span></div>
@@ -46,9 +48,15 @@
     </div>
     </div>
 </div>
+
+    <script>
+        // Feedback button functionality
+        document.getElementById('feedbackBtn').addEventListener('click', function() {
+            window.location.href = 'feedback.html'; // Redirect to the feedback page
+        });
+    </script>
+    
     <script src="script.js"></script>
 
 </body>
 </html>
-
-

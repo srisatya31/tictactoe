@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #f7cac9, #92a8d1);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #2C3E50;
+        }
+
+        nav {
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            height: 85px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 70px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            margin-right: 12px;
+            border-radius: 20%;
+        }
+
+        .site-title {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Feedback Form Container */
+        .feedback-form-container {
+            background-color: #fff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 100px;
+        }
+
+        .feedback-form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #2C3E50;
+        }
+
+        .input-field {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedback-text {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #E74C3C;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-logo">
+            <!-- Only wrap the logo with anchor tag -->
+            <a href="index.html">
+                <img src="logo.jpeg" alt="Logo" class="logo">
+            </a>
+            <span class="site-title">MY TICTACTOE.COM</span>
+        </div>
+        <div class="nav-buttons">
+            <button id="feedbackBtn">💬 Feedback</button>
+            <button id="togglebtn">🌞 Light Mode</button>
+        </div>
+    </nav>
+    
+
+    <!-- Feedback Form -->
+    <div class="feedback-form-container">
+        <h2>We Value Your Feedback</h2>
+
+        <!-- Feedback Form -->
+        <form id="feedbackForm">
+            <!-- Email Input -->
+            <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required>
+
+            <!-- Suggestions and Feedback -->
+            <textarea id="suggestions" name="suggestions" class="feedback-text" placeholder="Enter your suggestions or feedback..." required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Send Feedback</button>
+        </form>
+    </div>
+
+    <script>
+        // Optional: If you want to add functionality for the light mode/dark mode button.
+        document.getElementById("togglebtn").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // JavaScript to handle the feedback form and submit it as an email
+        document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Get the form values
+            var email = document.getElementById("email").value;
+            var suggestions = document.getElementById("suggestions").value;
+
+            // Encode the feedback content
+            var mailtoLink = "mailto:ankitgh2307@gmail.com?subject=Feedback%20from%20TicTacToe%20User&body=";
+            mailtoLink += "Email%3A%20" + encodeURIComponent(email) + "%0A";
+            mailtoLink += "Suggestions%3A%20" + encodeURIComponent(suggestions);
+
+            // Open the default email client with Gmail prefilled
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
