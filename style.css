@@ -47,8 +47,6 @@ body {
 
 .section {
     background: var(--game-bg);
-/* Section Styles */
-.section {
     background: linear-gradient(to right, #f7cac9, #92a8d1);
     position: relative;
     min-height: 100vh;
@@ -57,8 +55,6 @@ body {
 nav {
     background-color: var(--nav-bg);
     color: var(--nav-text);
-/* Navigation Styles */
-nav {
     background-color: #2C3E50;
     color: #ECF0F1;
     height: 85px;
@@ -103,8 +99,6 @@ nav ul {
 
 .info {
     font-size: 30px;
-}
-
 }
 
 /* Button Container Styling */
@@ -155,14 +149,8 @@ button:hover {
 .box {
     border: 2px solid var(--box-border);
     box-shadow: var(--box-shadow);
-    font-size: 8vw;
-    color: var(--box-color);
-/* Box Styling */
-.box {
-    border: 2px solid grey;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     font-size: 8em;
-    color: #2C3E50;
+    color: var(--box-color);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -173,8 +161,6 @@ button:hover {
 
 .box:hover {
     background-color: var(--box-hover);
-}
-
 }
 
 /* Box Hover Effect */
@@ -223,7 +209,6 @@ button:hover {
 
 #reset{
 /* Button Styles for Reset and Play with Computer */
-#reset {
     width: 60%;
     margin: 10px;
     background: #1f9b1b;
@@ -252,9 +237,6 @@ button:hover {
 
 .turnchange button:hover {
     background-color: var(--button-hover);
-/* Hover Effect for Buttons in Turn Info */
-.turnchange button:hover {
-    background-color: #2E86C1;
     transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -262,9 +244,6 @@ button:hover {
 
 .line {
     background-color: var(--win-line);
-/* Line between grid */
-.line {
-    background-color: rgb(222, 142, 229);
     height: 4px;
     width: 0;
     position: absolute;
@@ -324,9 +303,6 @@ button:hover {
 }
 
 .toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: max(10px, 2vw);
     background: #4285cd;
     color: white;
     border: none;
@@ -344,8 +320,6 @@ button:hover {
 
 @media (max-width: 480px) {
     .toggle-btn {
-        top: 20px;
-        right: 10px;
         width: 40px;
         height: 40px;
         font-size: 16px;
@@ -355,6 +329,7 @@ button:hover {
 #easy, #medium, #hard {
     background-color: var(--difficulty-bg);
 /* Dark Mode Button Styling */
+}
 #togglebtn {
     background-color: #FF5733;
     color: #FFFFFF;
