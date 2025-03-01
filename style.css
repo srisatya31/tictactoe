@@ -47,18 +47,14 @@ body {
 
 .section {
     background: var(--game-bg);
-/* Section Styles */
-.section {
     background: linear-gradient(to right, #f7cac9, #92a8d1);
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 nav {
     background-color: var(--nav-bg);
     color: var(--nav-text);
-/* Navigation Styles */
-nav {
     background-color: #2C3E50;
     color: #ECF0F1;
     height: 85px;
@@ -71,7 +67,9 @@ nav {
     transition: 0.3s;
     padding: 0 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: relative; /* Ensure proper positioning of buttons */
+    position: sticky;
+    z-index: 20;
+    top: 0;
 }
 
 /* Navigation List */
@@ -87,13 +85,8 @@ nav ul {
     align-items: center;
 }
 
-.nav-logo img {
-    height: 70px;
-}
-
-.logo {
-    width: 75px;
-    height: 75px;
+.nav-logo .logo {
+    width: 50px;
     margin-right: 12px;
     border-radius: 20%;
     border-radius: 20%; /* Makes the logo circular */
@@ -106,8 +99,6 @@ nav ul {
 
 .info {
     font-size: 30px;
-}
-
 }
 
 /* Button Container Styling */
@@ -150,22 +141,16 @@ button:hover {
     margin-top: 50px;
     display: grid;
     position: relative;
-    grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10em);
+    grid-template-columns: repeat(3, 10em);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .box {
     border: 2px solid var(--box-border);
     box-shadow: var(--box-shadow);
-    font-size: 8vw;
+    font-size: 8em;
     color: var(--box-color);
-/* Box Styling */
-.box {
-    border: 2px solid grey;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    font-size: 8vw;
-    color: #2C3E50;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -176,8 +161,6 @@ button:hover {
 
 .box:hover {
     background-color: var(--box-hover);
-}
-
 }
 
 /* Box Hover Effect */
@@ -226,7 +209,6 @@ button:hover {
 
 #reset{
 /* Button Styles for Reset and Play with Computer */
-#reset {
     width: 60%;
     margin: 10px;
     background: #1f9b1b;
@@ -248,17 +230,13 @@ button:hover {
     border: none;
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    width: 70%;
     font-size: 14px;
     transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 .turnchange button:hover {
     background-color: var(--button-hover);
-/* Hover Effect for Buttons in Turn Info */
-.turnchange button:hover {
-    background-color: #2E86C1;
     transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -266,9 +244,6 @@ button:hover {
 
 .line {
     background-color: var(--win-line);
-/* Line between grid */
-.line {
-    background-color: rgb(222, 142, 229);
     height: 4px;
     width: 0;
     position: absolute;
@@ -296,6 +271,22 @@ button:hover {
     }
 }
 
+@media screen and (max-width: 678px) {
+    .site-title{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .container {
+        grid-template-rows: repeat(3, 30vw);
+        grid-template-columns: repeat(3, 30vw);
+    }
+    .box {
+        font-size: 18vw;
+    }
+}
+
 /* Dark Mode Styles */
 :root {
     --bg-color: white;
@@ -312,9 +303,6 @@ button:hover {
 }
 
 .toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: max(10px, 2vw);
     background: #4285cd;
     color: white;
     border: none;
@@ -332,8 +320,6 @@ button:hover {
 
 @media (max-width: 480px) {
     .toggle-btn {
-        top: 20px;
-        right: 10px;
         width: 40px;
         height: 40px;
         font-size: 16px;
@@ -343,6 +329,7 @@ button:hover {
 #easy, #medium, #hard {
     background-color: var(--difficulty-bg);
 /* Dark Mode Button Styling */
+}
 #togglebtn {
     background-color: #FF5733;
     color: #FFFFFF;
@@ -363,12 +350,19 @@ button:hover {
 }
 
 /* Button Styling for Difficulty Levels */
+.level{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 0.7em;
+}
+
 #easy,
 #medium,
 #hard {
     background-color: #1e3a42;
     color: #ffffff;
-    margin-top: 10px;
     border: none;
     border-radius: 2px;
     padding: 10px;
